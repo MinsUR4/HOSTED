@@ -5,7 +5,8 @@ const webSocketURL = 'wss://0cc6da77-75cd-48b7-992e-133dba0a599e-00-1zaezkqedhjb
 
 // Variable to control the interval
 let intervalId;
-let wasWebSocketUp = false; // Track the state of the WebSocket
+let wasWebSocketUp = false; 
+let t = true; 
 
 // Function to check the WebSocket connection
 function checkWebSocket(url) {
@@ -37,7 +38,7 @@ async function checkAndExecute() {
                 wasWebSocketUp = true; // Update the state
             }
         } else {
-            if (wasWebSocketUp) {
+            if (t) {
                 // WebSocket just became down, update the UI
                 const countdownScreen = document.getElementById('launch_countdown_screen');
                 const countdownNumber = document.getElementById('launchCountdownNumber');
