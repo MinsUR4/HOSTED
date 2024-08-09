@@ -49,7 +49,7 @@ async function checkAndExecute() {
             countdownScreen.style.fontFamily = 'Arial, sans-serif';
             countdownScreen.style.textAlign = 'center';
             countdownScreen.style.padding = '20px';
-            countdownScreen.style.border = '20px solid #f00'; // Red border
+            countdownScreen.style.border = '1px solid #f00'; // Red border
             countdownScreen.style.boxSizing = 'border-box'; // Include border in total width and height
             countdownScreen.style.position = 'fixed';
             countdownScreen.style.top = '0';
