@@ -26,12 +26,11 @@ async function checkAndExecute() {
     if (isUp) {
         // Your code here
     } else {
-// Get the elements once to avoid repetitive DOM queries
+
 const countdownScreen = document.getElementById('launch_countdown_screen');
 const countdownNumber = document.getElementById('launchCountdownNumber');
 const countdownProgress = document.getElementById('launchCountdownProgress');
 
-// Update the screen when the WebSocket is down
 countdownScreen.innerHTML = `
     <div id="errorMessage">
         <h1>The Server Is Down!</h1>
@@ -40,16 +39,16 @@ countdownScreen.innerHTML = `
 `;
 
 // Apply styles
-countdownScreen.style.backgroundColor = '#333'; // Dark background
+countdownScreen.style.backgroundColor = '#00'; 
 countdownScreen.style.color = '#fff'; // White text
 countdownScreen.style.display = 'flex';
-countdownScreen.style.flexDirection = 'column';
+countdownScreen.style.flexDirection = 'column'
 countdownScreen.style.alignItems = 'center';
 countdownScreen.style.justifyContent = 'center';
 countdownScreen.style.fontFamily = 'Arial, sans-serif';
 countdownScreen.style.textAlign = 'center';
 countdownScreen.style.padding = '20px';
-countdownScreen.style.border = '2px solid #f00'; // Red border
+countdownScreen.style.border = '2px solid #f333'; // Red border
 
 countdownNumber.style.display = 'none'; // Hide countdown number
 countdownProgress.style.display = 'none'; // Hide countdown progress
