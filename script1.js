@@ -31,14 +31,14 @@ async function checkAndExecute() {
             const countdownScreen = document.getElementById('launch_countdown_screen');
             const countdownNumber = document.getElementById('launchCountdownNumber');
             const countdownProgress = document.getElementById('launchCountdownProgress');
-
+            
             countdownScreen.innerHTML = `
                 <div id="errorMessage">
                     <h1>The Server Is Down!</h1>
                     <p>Please try again later.</p>
                 </div>
             `;
-
+            
             // Apply styles
             countdownScreen.style.backgroundColor = '#000'; // Black background
             countdownScreen.style.color = '#fff'; // White text
@@ -50,15 +50,16 @@ async function checkAndExecute() {
             countdownScreen.style.textAlign = 'center';
             countdownScreen.style.padding = '20px';
             countdownScreen.style.border = '20px solid #f00'; // Red border
+            countdownScreen.style.boxSizing = 'border-box'; // Include border in total width and height
             countdownScreen.style.position = 'fixed';
             countdownScreen.style.top = '0';
             countdownScreen.style.left = '0';
             countdownScreen.style.width = '100%';
             countdownScreen.style.height = '100%';
             countdownScreen.style.zIndex = '9999'; // Ensure it overlays other content
-
+            
             countdownNumber.style.display = 'none'; // Hide countdown number
-            countdownProgress.style.display = 'none'; // Hide countdown progress
+            countdownProgress.style.display = 'none'; // Hide countdown progress            
         }
     } catch (error) {
         console.error('Error checking WebSocket status:', error);
