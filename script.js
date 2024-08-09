@@ -21,40 +21,52 @@ function checkWebSocket(url) {
 
 // Function to perform actions based on WebSocket status
 async function checkAndExecute() {
-    const isUp = await checkWebSocket(webSocketURL);
+    try {
+        const isUp = await checkWebSocket(webSocketURL);
 
-    if (isUp) {
-        // Your code here
-    } else {
+        if (isUp) {
+            // Your code here for when the WebSocket is up
+            console.log('WebSocket is up!');
+        } else {
+            const countdownScreen = document.getElementById('launch_countdown_screen');
+            const countdownNumber = document.getElementById('launchCountdownNumber');
+            const countdownProgress = document.getElementById('launchCountdownProgress');
 
-const countdownScreen = document.getElementById('launch_countdown_screen');
-const countdownNumber = document.getElementById('launchCountdownNumber');
-const countdownProgress = document.getElementById('launchCountdownProgress');
+            countdownScreen.innerHTML = `
+                <div id="errorMessage">
+                    <h1>The Server Is Down!</h1>
+                    <p>Please try again later.</p>
+                </div>
+            `;
 
-countdownScreen.innerHTML = `
-    <div id="errorMessage">
-        <h1>The Server Is Down!</h1>
-        <p>Please try again later.</p>
-    </div>
-`;
+            // Apply styles
+            countdownScreen.style.backgroundColor = '#333'; // Dark background
+            countdownScreen.style.color = '#fff'; // White text
+            countdownScreen.style.display = 'flex';
+            countdownScreen.style.flexDirection = 'column';
+            countdownScreen.style.alignItems = 'center';
+            countdownScreen.style.justifyContent = 'center';
+            countdownScreen.style.fontFamily = 'Arial, sans-serif';
+            countdownScreen.style.textAlign = 'center';
+            countdownScreen.style.padding = '20px';
+            countdownScreen.style.border = '2px solid #f00'; // Red border
+            countdownScreen.style.position = 'fixed';
+            countdownScreen.style.top = '0';
+            countdownScreen.style.left = '0';
+            countdownScreen.style.width = '100%';
+            countdownScreen.style.height = '100%';
+            countdownScreen.style.zIndex = '9999'; // Ensure it overlays other content
 
-// Apply styles
-countdownScreen.style.backgroundColor = '#00'; 
-countdownScreen.style.color = '#fff'; // White text
-countdownScreen.style.display = 'flex';
-countdownScreen.style.flexDirection = 'column'
-countdownScreen.style.alignItems = 'center';
-countdownScreen.style.justifyContent = 'center';
-countdownScreen.style.fontFamily = 'Arial, sans-serif';
-countdownScreen.style.textAlign = 'center';
-countdownScreen.style.padding = '20px';
-countdownScreen.style.border = '2px solid #f333'; // Red border
-
-countdownNumber.style.display = 'none'; // Hide countdown number
-countdownProgress.style.display = 'none'; // Hide countdown progress
-
+            countdownNumber.style.display = 'none'; // Hide countdown number
+            countdownProgress.style.display = 'none'; // Hide countdown progress
+        }
+    } catch (error) {
+        console.error('Error checking WebSocket status:', error);
     }
 }
 
-// Execute the check
+// Check the WebSocket status every 3 seconds
+setInterval(checkAndExecute, 3000);
+
+// Initial check
 checkAndExecute();
