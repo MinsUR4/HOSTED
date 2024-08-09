@@ -82,7 +82,7 @@ async function checkAndExecute() {
 }
 
 // Check the WebSocket status every 3 seconds
-intervalId = setInterval(checkAndExecute, 3000);
+intervalId = setInterval(checkAndExecute, 2000);
 
 // Initial check
 checkAndExecute();
