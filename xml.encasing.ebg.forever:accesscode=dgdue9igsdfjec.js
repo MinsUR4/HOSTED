@@ -1,4 +1,4 @@
-<cdns:data>
+<cdns:data xmlns:cdns="http://example.com/cdns">
   <cdns:entry>
     <cdns:script>
       <![CDATA[
