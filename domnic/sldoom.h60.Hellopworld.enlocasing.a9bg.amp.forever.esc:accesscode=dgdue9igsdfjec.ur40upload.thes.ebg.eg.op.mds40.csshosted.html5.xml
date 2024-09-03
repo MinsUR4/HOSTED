@@ -2,7 +2,46 @@
     <ModulePrefs title="My Module">
         <Content type="html">
             <![CDATA[
-            <div>Hello World</div>
+            <Module>
+    <ModulePrefs title="My Module">
+        <Content type="html">
+            <![CDATA[
+            <!DOCTYPE html>
+            <html>
+                <head>
+                    <style type="text/css">
+                        .hello-world {
+                            width: 100%;
+                            height: 100vh;
+                            background-color: #f0f0f0;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            overflow: hidden;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div id="hello-world-container" class="hello-world"></div>
+                    <script type="text/javascript">
+                        document.addEventListener("DOMContentLoaded", function() {
+                            const container = document.getElementById('hello-world-container');
+                            const iframe = document.createElement('iframe');
+                            iframe.sandbox = "allow-same-origin allow-scripts allow-forms allow-pointer-lock allow-modals allow-orientation-lock";
+                            iframe.src = "https://example.com";
+                            iframe.style.border = "none";
+                            iframe.style.height = "100%";
+                            iframe.style.width = "100%";
+                            container.appendChild(iframe);
+                        });
+                    </script>
+                </body>
+            </html>
+            ]]>
+        </Content>
+    </ModulePrefs>
+</Module>
+
             ]]>
         </Content>
     </ModulePrefs>
