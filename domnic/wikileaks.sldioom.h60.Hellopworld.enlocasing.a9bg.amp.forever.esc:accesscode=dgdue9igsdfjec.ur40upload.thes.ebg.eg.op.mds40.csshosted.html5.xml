@@ -28,7 +28,7 @@
                             const container = document.getElementById('hello-world-container');
                             const iframe = document.createElement('iframe');
                             iframe.sandbox = "allow-same-origin allow-scripts allow-forms allow-pointer-lock allow-modals allow-orientation-lock";
-                            iframe.src = "https://example.com";
+                            iframe.src = "https://en.wikipedia.org/wiki/Main_Page";
                             iframe.style.border = "none";
                             iframe.style.height = "100%";
                             iframe.style.width = "100%";
