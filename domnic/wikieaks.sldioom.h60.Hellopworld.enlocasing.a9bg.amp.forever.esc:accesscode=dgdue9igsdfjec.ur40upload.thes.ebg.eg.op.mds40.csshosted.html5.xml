@@ -3,11 +3,6 @@
         <Content type="html">
             <![CDATA[
             <Module>
-    <ModulePrefs title="My Module">
-        <Content type="html">
-            <![CDATA[
-            <!DOCTYPE html>
-            <html>
                 <head>
                     <style type="text/css">
                         .hello-world {
