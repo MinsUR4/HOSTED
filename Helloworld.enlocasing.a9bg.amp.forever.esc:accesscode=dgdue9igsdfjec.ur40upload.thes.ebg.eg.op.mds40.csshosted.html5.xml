@@ -3,7 +3,6 @@
 <Content type="html">
 <!--  Hello, school admin or snoopy student. It seems you've cracked all my defenses—congrats! Have fun with this; it's your reward.  -->
     <script type="text/javascript">
-        // Create the "hello world" container
         const container = document.createElement('div');
         container.id = 'hello-world-container';
         container.className = 'hello-world';
