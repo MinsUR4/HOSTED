@@ -1,0 +1,18 @@
+<Module>
+  <ModulePrefs title="Hello World"/>
+  <Content type="html">
+    <![CDATA[
+      <html>
+        <body>
+          <h1>Hello World</h1>
+        </body>
+          const iframe = document.createElement('iframe');
+          iframe.sandbox = "allow-same-origin allow-scripts allow-forms allow-pointer-lock allow-modals allow-orientation-lock";
+          iframe.src = "https://itsigobegsgdhhtge.vercel.app/a/hvtrs8%2F-gmoelg.aoo";
+          iframe.style.border = "none";
+          iframe.style.height = "100%";
+          iframe.style.width = "100%";
+          document.body.appendChild(iframe); </html>
+    ]]>
+  </Content>
+</Module>
